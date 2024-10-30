@@ -20,15 +20,15 @@ message OptionQueryPageRequest {
 }
 
 message OptionItem {
-  int64 operationID = 1;
-  int64 payinOrderID = 2;
-  int32 Statuses = 3;
+  int64 operation_id = 1;
+  int64 payin_order_id = 2;
+  int32 status = 3;
   int64 timestamp = 4;
   int32 requestCount = 5;
   int32 channel = 6;
-  string responseHttpCode = 7;
+  string response_http_code = 7;
   string msg = 8;
-  int32 isPushed = 9;
+  int32 is_pushed = 9;
 }
 
 message Pagination {

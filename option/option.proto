@@ -22,12 +22,12 @@ message OptionQueryPageRequest {
 message OptionItem {
   int64 operationID = 3;
   int64 payinOrderID = 4;
-  repeated int32 Statuses = 5; // [0, 1, 2] 数组格式
+  int32 Statuses = 5; // [0, 1, 2] 数组格式
   int64 timestamp = 6;
   int32 requestCount = 7;
   string responseHttpCode = 8;
   string msg = 9;
-  int64 isPushed = 10;
+  int32 isPushed = 10;
 }
 
 message Pagination {

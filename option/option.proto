@@ -46,8 +46,9 @@ message OptionQueryPageResponse {
 }
 
 message OptionLogQueryPageRequest {
-  int64 optionId = 1;
-  string orderId = 2;
+  int32 page = 1;
+  int32 pageSize = 2;
+  int64 orderId = 3;
 }
 
 message OptionLogQueryPageResponse {

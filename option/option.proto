@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package order.option;
+
+option go_package = "../option";
+
+service option {
+  rpc OptionQueryPage(OptionQueryPageRequest)
+      returns (OptionQueryPageResponse) {}
+  rpc OptionLogQueryPage(OptionLogQueryPageRequest)
+      returns (OptionLogQueryPageResponse) {}
+}
+
+message OptionQueryPageRequest {
+  int32 page = 1;
+  int32 pageSize = 2;
+  int64 operationID = 3;
+  int64 payinOrderID = 4;
+  repeated int32 Statuses = 5; // [0, 1, 2] 数组格式
+  int64 timestamp = 6;
+  int32 requestCount = 7;
+  string responseHttpCode = 8;
+  string msg = 9;
+  int64 isPushed = 10;
+}
+
+message OptionItem {
+  int64 operationID = 3;
+  int64 payinOrderID = 4;
+  repeated int32 Statuses = 5; // [0, 1, 2] 数组格式
+  int64 timestamp = 6;
+  int32 requestCount = 7;
+  string responseHttpCode = 8;
+  string msg = 9;
+  int64 isPushed = 10;
+}
+
+message Pagination {
+  int32 pageSize = 1;
+  int32 page = 2;
+  int32 currentPage = 3;
+  int32 total = 4;
+}
+
+message OptionQueryPageResponse {
+  int32 code = 1; // 返回码
+  string msg = 2; // 错误信息
+  repeated OptionItem items = 3;
+  Pagination pagination = 4;
+}
+
+message OptionLogQueryPageRequest {
+  int64 optionId = 1;
+  string orderId = 2;
+}
+
+message OptionLogQueryPageResponse {
+  int32 code = 1; // 返回码
+  string msg = 2; // 错误信息
+  repeated OptionLogItem items = 3;
+  Pagination pagination = 4;
+}
+
+message OptionLogItem {}

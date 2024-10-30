@@ -20,14 +20,15 @@ message OptionQueryPageRequest {
 }
 
 message OptionItem {
-  int64 operationID = 3;
-  int64 payinOrderID = 4;
-  int32 Statuses = 5; // [0, 1, 2] 数组格式
-  int64 timestamp = 6;
-  int32 requestCount = 7;
-  string responseHttpCode = 8;
-  string msg = 9;
-  int32 isPushed = 10;
+  int64 operationID = 1;
+  int64 payinOrderID = 2;
+  int32 Statuses = 3;
+  int64 timestamp = 4;
+  int32 requestCount = 5;
+  int32 channel = 6;
+  string responseHttpCode = 7;
+  string msg = 8;
+  int32 isPushed = 9;
 }
 
 message Pagination {
@@ -56,4 +57,15 @@ message OptionLogQueryPageResponse {
   Pagination pagination = 4;
 }
 
-message OptionLogItem {}
+message OptionLogItem {
+  int64 operation_id = 1;
+  int64 order_id = 2;
+  string payin_order = 3;
+  int32 operation_type = 4;
+  int32 operation_status = 5;
+  int32 response_http_code = 6;
+  string messeage = 7;
+  string request = 8;
+  string response = 9;
+  int64 create_time = 10;
+}

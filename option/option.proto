@@ -16,12 +16,12 @@ message OptionQueryPageRequest {
   int32 pageSize = 2;
   int64 operationID = 3;
   int64 payinOrderID = 4;
-  repeated int32 Statuses = 5; // [0, 1, 2] 数组格式
+  repeated int32 statuses = 5; // [0, 1, 2] 数组格式
 }
 
 message OptionItem {
-  int64 operation_id = 1;
-  int64 payin_order_id = 2;
+  string operation_id = 1;
+  string payin_order_id = 2;
   int32 status = 3;
   int64 timestamp = 4;
   int32 requestCount = 5;
@@ -59,8 +59,8 @@ message OptionLogQueryPageResponse {
 }
 
 message OptionLogItem {
-  int64 operation_id = 1;
-  int64 order_id = 2;
+  string operation_id = 1;
+  string order_id = 2;
   string payin_order = 3;
   int32 operation_type = 4;
   int32 operation_status = 5;

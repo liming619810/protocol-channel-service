@@ -23,12 +23,13 @@ message OptionItem {
   string operation_id = 1;
   string payin_order_id = 2;
   int32 status = 3;
-  int64 timestamp = 4;
-  int32 requestCount = 5;
-  int32 channel = 6;
-  string response_http_code = 7;
-  string msg = 8;
-  int32 is_pushed = 9;
+  string payment_id = 4;
+  int64 timestamp = 5;
+  int32 requestCount = 6;
+  int32 channel = 7;
+  string response_http_code = 8;
+  string msg = 9;
+  int32 is_pushed = 10;
 }
 
 message Pagination {
